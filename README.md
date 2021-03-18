@@ -31,9 +31,6 @@ func main() {
     })
 
     // Iterate over all records of type "note"
-    scribble.Query{
-      Type: "note",
-    }
     db.Each(scribble.Query{Type: "note"}, func(r scribble.Record) error {
         fmt.Printf("Content of note %s: '%v'\n", r.ID(), r.Content)
     }
